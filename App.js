@@ -25,7 +25,7 @@ import { AdMobRewarded } from "expo-ads-admob";
 import * as Localization from "expo-localization";
 import i18n from "i18n-js";
 
-AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5224354917");
+AdMobRewarded.setAdUnitID("ca-app-pub-4957827248681224/9057411339");
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -62,7 +62,7 @@ i18n.fallbacks = true;
 const DATA = i18n.t("data");
 
 const appUrl =
-  "https://play.google.com/store/apps/details?id=com.igorcompany.Quote_Insta";
+  "https://play.google.com/store/apps/details?id=com.igorcompany.quiz_flags";
 
 export default function App() {
   const [ready, setReady] = useState(false);
