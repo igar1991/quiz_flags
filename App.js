@@ -40,7 +40,8 @@ i18n.translations = {
     back: "Back",
     revwant: "Want more levels? Review the app!",
     notwant: "I don't want",
-    shartext: "How well do you know the songs? Download and test your strength:"
+    shartext:
+      "How well do you know the flags? Download and test your strength:",
   },
   ru: {
     data: DATARU,
@@ -52,7 +53,7 @@ i18n.translations = {
     back: "Назад",
     revwant: "Хочешь больше уровней? Оцени приложение!",
     notwant: "Не хочу",
-    shartext: "Как хорошо ты знаешь песни? Скачивай и проверь свои силы:"
+    shartext: "Как хорошо ты знаешь флаги? Скачивай и проверь свои силы:",
   },
 };
 
@@ -62,7 +63,7 @@ i18n.fallbacks = true;
 const DATA = i18n.t("data");
 
 const appUrl =
-  "https://play.google.com/store/apps/details?id=com.igorcompany.quiz_flags";
+  "https://play.google.com/store/apps/details?id=com.igar1991.quiz_flags";
 
 export default function App() {
   const [ready, setReady] = useState(false);
@@ -303,22 +304,22 @@ export default function App() {
           <View
             style={{
               flex: 11,
-              width: '100%',
+              width: "100%",
               backgroundColor: THEME.main,
             }}
           >
             <FlatList
               data={DATA}
               numColumns={3}
-              columnWrapperStyle={{justifyContent: 'space-around'}}
-              renderItem={({item}) => (
+              columnWrapperStyle={{ justifyContent: "space-around" }}
+              renderItem={({ item }) => (
                 <Test
                   key={item.id}
                   title={item.id}
                   onPress={() =>
                     level >= item.id ? addTest(item) : console.log("no")
                   }
-                  lock={(level >= item.id) ? false : true}
+                  lock={level >= Number(item.id) ? false : true}
                 />
               )}
               keyExtractor={(item) => item.id}
