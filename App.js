@@ -317,7 +317,7 @@ export default function App() {
                   key={item.id}
                   title={item.id}
                   onPress={() =>
-                    level >= item.id ? addTest(item) : console.log("no")
+                    level >= Number(item.id) ? addTest(item) : console.log("no")
                   }
                   lock={level >= Number(item.id) ? false : true}
                 />
